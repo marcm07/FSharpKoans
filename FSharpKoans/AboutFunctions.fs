@@ -381,7 +381,7 @@ module ``03: Putting the Function into Functional Programming`` =
         // Extending a bit more, what do you do when you want to apply a function,
         // but modify the result before you give it back?
         let f animal noise = animal + " says " + noise
-        let cows = __ // <-- multiple words on this line, or you may want to make this a multi-line thing.  You MUST use `f`.
+        let cows = fun k ->  (+) (f "cow" k) (", de gozaru") // <-- multiple words on this line, or you may want to make this a multi-line thing.  You MUST use `f`.
         cows "moo" |> should equal "cow says moo, de gozaru"
         cows "MOOooOO" |> should equal "cow says MOOooOO, de gozaru"
 
@@ -391,8 +391,8 @@ module ``03: Putting the Function into Functional Programming`` =
             let middle = (final - initial) / 2
             fun t -> t-middle, t+middle
         // note the number of inputs provided below.  Do you see why I can do this?
-        calculate 10 20 5 |> should equal __
-        calculate 0 600 250 |> should equal __
+        calculate 10 20 5 |> should equal (0,10)
+        calculate 0 600 250 |> should equal (-50,550)
 
     [<Test>]
     let ``36 Using a value defined in an inner scope`` () =
@@ -400,8 +400,8 @@ module ``03: Putting the Function into Functional Programming`` =
         let g t =
             let result = ((t%2)+1) * 10
             fun x -> result - x
-        g 5 8 |> should equal __
-        g 8 5 |> should equal __
+        g 5 8 |> should equal 12
+        g 8 5 |> should equal 5
         // PS. I hope this one brought you some closure.
 
     [<Test>]

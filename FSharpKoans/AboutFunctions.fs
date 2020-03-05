@@ -408,7 +408,7 @@ module ``03: Putting the Function into Functional Programming`` =
     let ``37 An operator is just a function in disguise`` () =
         let apply f x =
             f x 3
-        apply (/) 27 |> should equal __
-        apply (*) 4 |> should equal __
-        apply (+) 13 |> should equal __
-        apply (-) 8 |> should equal __
+        apply (/) 27 |> should equal 9
+        apply (*) 4 |> should equal 12
+        apply (+) 13 |> should equal 16
+        apply (-) 8 |> should equal 5

@@ -48,17 +48,17 @@ module ``11: String manipulation`` =
 
     [<Test>]
     let ``07 String formatting: %s format specifier`` () =
-        let result = sprintf  "perfect"
+        let result = sprintf "Practice makes %s" "perfect."
         result |> should equal "Practice makes perfect."
 
     [<Test>]
     let ``08 String formatting: %d format specifier`` () =
-        let result = sprintf __ 9
+        let result = sprintf "%d planets, Sir, endlessly circle, Sir" 9
         result |> should equal "9 planets, Sir, endlessly circle, Sir"
 
     [<Test>]
     let ``09 String formatting: %b format specifier`` () =
-        let result = sprintf __ true
+        let result = sprintf "It's %b, it is." true
         result |> should equal "It's true, it is."
 
     [<Test>]
